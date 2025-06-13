@@ -2,79 +2,214 @@
   font-family: Helvetica, sans-serif;
   margin: 0;
   padding: 0;
+  text-decoration: none;
+  
+}
+
+body{
+  background-image: url('IMG/Gemini_Generated_Image_ocuntwocuntwocun.png');
 }
 
 #navbar {
   border-bottom: 1px solid #ccc;
-  padding: 1em;
-  margin-bottom: 1em;
+  padding: 1.2em 2em;
+  margin-bottom: 2em;
+  margin-bottom: 2em;  
+  background-color: #faf9fa;
+  box-shadow: 0 4px rgba(150, 18, 184, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;  
+  
+}
+#navbar:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+    
 }
 
 #navbar ul {
   display: flex;
   list-style: none;
+  text-decoration: none;
+  
+
 }
 
 #navbar ul li {
-  margin-left: 1em;
+    margin-left: 2em;
+    
+}
+
+#navbar ul li a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    font-size: 1.05em;
+    position: relative;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-out; 
+}
+
+#navbar ul li a:hover {
+    color: #000000;
+    transform: translateY(-2px);
+}
+
+#navbar ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #020202;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease-in-out;
+}
+
+#navbar ul li a:hover::after {
+    width: 100%;
 }
 
 h1 {
-  text-align: center;
-  margin-bottom: 1em;
+    text-align: center;
+    margin-bottom: 1.5em;
+    font-size: 3.2em; 
+    font-weight: 700; 
+    letter-spacing: 0.05em;
+    
+    
+    background: linear-gradient(90deg, #bb3fb5, #3b3a68, #1E88E5, #7633ad);
+   
+    
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    
+    background-size: 200% auto;
+    animation: gradientFlow 5s ease-in-out infinite alternate;
+
+    
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
 }
 
 .form {
-  width: 450px;
-  margin: 0 auto;
+    width: 480px;
+    max-width: 90%;
+    margin: 0 auto;    
+    padding: 30px; 
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(34, 33, 33, 0.3);
+    animation: fadeInUp 0.8s ease-out; 
 }
 
 .form-control {
   display: flex;
   flex-direction: column;
-  margin-bottom: 0.5em;
+  margin-bottom: 1.2em;
+  position: relative;
+  background: rgba(255, 248, 230, 0.95);
+  border: 1px solid #c7a373;
+  padding: 1.8em 2em;
+  border-radius: 10px;
+  box-shadow: 0 6px 14px rgba(60, 40, 20, 0.08);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.form-control:hover {
+  box-shadow: 0 10px 20px rgba(60, 40, 20, 0.15);
+  transform: translateY(-2px);
 }
 
 .form-control label {
   font-weight: bold;
-  margin-bottom: 0.3em;
+  margin-bottom: 0.5em;
+  color: #4a3522; 
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
 }
 
 .form-control input {
-  padding: 5px;
+  padding: 12px;
+  border: 1px solid #bfa888;
+  border-radius: 6px;
+  font-size: 1em;  
+  color: #3a2e1f;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  outline: none;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.form-control input:focus {
+  border-color: #a67850;
+  box-shadow: 0 0 10px rgba(166, 120, 80, 0.3);
+  
 }
 
 /* BOOKS */
 .books-container {
-  width: 450px;
+  width: 480px;
   margin: 0 auto;
+  background-color: #fffaf3;
+  border: 1px solid #e0d6c3;
+  border-radius: 8px;
+  padding: 1.2em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  font-family: 'Georgia', serif;
 }
 
 .books-container div {
-  border-bottom: 1px solid #ccc;
-  padding: 5px;
-  margin: 5px;
+  border-bottom: 1px solid #d3c5ae;
+  padding: 10px;
+  margin: 8px 0;
+  transition: background-color 0.2s ease;
+}
+
+.books-container div:hover {
+  background-color: #fef9ee;
 }
 
 .bold {
   font-weight: bold;
+  color: #4a3c2a;
 }
 
 /* BOOK */
 #book-page {
   padding: 2em;
+  background-color: #fdf8ef;
 }
 
 #book-page .container {
   text-align: center;
+  font-family: 'Georgia', serif;
 }
 
 .actions {
-  margin-top: 1em;
+  margin-top: 1.5em;
   display: flex;
   justify-content: center;
+  gap: 1em;
 }
 
 .actions a {
-  margin-right: 1em;
+  padding: 0.6em 1.2em;
+  background-color: #8b5e3c;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-family: 'Segoe UI', sans-serif;
+  transition: background-color 0.2s ease;
+}
+
+.actions a:hover {
+  background-color: #a46c44;
 }
